@@ -1,34 +1,42 @@
+// person {
+// 	firstName: '',
+// 	lastName: '',
+// 	phoneNumber: '',
+// 	street: '',
+// 	city: '',
+// 	state: ''
+// }
 
+var contacts = []
 $(document).ready(function(){
 
-	$('#submit').click(function(e){
+	$('#contactCreator').submit(function(e){
 		e.preventDefault();
-		$('#contactCreator').submit();
-		var firstName = document.getElementById('firstNameInput');
-		var lastName = document.getElementById('lastNameInput');
-		var phone = document.getElementById('phoneInput');
-		var streetName = document.getElementById('streetInput');
-		var cityName = document.getElementById('cityInput');
-		var stateName = document.getElementById('stateInput');
-
-		var fName = firstName.value;
-		var lName = lastName.value;
-		var phoneNum = phone.value;
-		var street = streetName.value;
-		var city = cityName.value;
-		var state = stateName.value;
-		//is there a way to reference *all* inputs?
-		if(fName === '' || lName === ''){
-			$('#false').text('Please complete all fields');
-			return false;
-		}else { 
-			$('#firstNameDiv').append(fName);
-			$('#lastNameDiv').append(lName);
-			$('#phoneDiv').append(phoneNum);
-			$('#streetDiv').append(street);
-			$('#cityDiv').append(city);
-			$('#stateDiv').append(state);
+		console.log(e);
+		var newPerson = {
+			firstName: document.getElementById('firstNameInput').value,
+			lastName: document.getElementById('lastNameInput').value,
+			phone: document.getElementById('phoneInput').value,
+			streetName: document.getElementById('streetInput').value,
+			cityName: document.getElementById('cityInput').value,
+			stateName: document.getElementById('stateInput').value
 		}
+
+		contacts.push(newPerson);
+		console.log(contacts);
+		//clear out rows loop through array, append each person to the body *for each contact, append*
+		var contactHTML = '<tr>';
+		contactHTML += '<td>' + newPerson.firstName + '</td>';
+		contactHTML += '<td>' + newPerson.lastName + '</td>';
+		contactHTML += '<td>' + newPerson.phone + '</td>';
+		contactHTML += '<td>' + newPerson.streetName + '</td>';
+		contactHTML += '<td>' + newPerson.cityName + '</td>';
+		contactHTML += '<td>' + newPerson.stateName + '</td>';
+
+
+
+		$('#contactRows').append(contactHTML);
+
 	})
 	
 })
