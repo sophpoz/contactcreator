@@ -19,14 +19,16 @@ table {
 }
 .form{
 	text-align: center;
-	padding:40px;
+	padding:20px;
 	background-color: #EDDDD4;
 	position: absolute;
 	top: 38%;
 	left:50%;
 	transform: translate(-50%, -50%);
-	height: 30vh;
+	height: 35vh;
+	width: 50vw;
 	box-shadow: 30px 30px 30px -15px #772E25;
+	padding-top: 40px;
 }
 span{
 	font-family: 'Comfortaa', sans-serif;
@@ -37,7 +39,7 @@ input {
 	font-size: 15px;
 }
 #contactCreator{
-	line-height: 1.6em;
+	line-height: 1.25em;
 	text-align: center;
 	margin-top: 10px;
 	font-family: 'Open Sans', sans-serif;
