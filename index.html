@@ -6,19 +6,25 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans" rel="stylesheet">
 </head>
 <body>
+<div class="tophalf">
 	<div class="form">
+		<span>Add a Contact:</span>
 	<form id="contactCreator" name="contacts">
 		First Name: <input type="text" name="firstNameInput" id="firstNameInput"></input>
-		Last Name: <input type="text" name="lastNameInput" id="lastNameInput"></input>
+		Last Name:<input type="text" name="lastNameInput" id="lastNameInput"></input><br>
 		Phone Number: <input type="text" name="phoneInput" id="phoneInput"></input>
-		Street: <input type="text" name="streetInput" id="streetInput"></input>
+		Street: <input type="text" name="streetInput" id="streetInput"></input><br>
 		City: <input type="text" name="cityInput" id="cityInput"></input>
-		State: <input type="text" name="stateInput" id="stateInput"></input>
+		State: <input type="text" name="stateInput" id="stateInput"></input><br>
 		<input type="submit" name="submit" value="submit" id="submit" ></input> 
 	</form>
 </div>
+</div>
+<div class="bottomhalf">
+	<div class="contact">My Contacts</div>
 <table>
 	<thead>
 		<tr>
@@ -28,19 +34,13 @@
 			<th>Street:</th>
 			<th>City:</th>
 			<th>State:</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody id="contactRows">
 	</tbody>
 </table>
-<!-- <div class="contactInfo">
-	First Name: <div id="firstNameDiv"></div>
-	Last Name: <div id="lastNameDiv"></div>
-	Phone number:<div id="phoneDiv"></div>
-	Street:<div id="streetDiv"></div>
-	City:<div id="cityDiv"></div>
-	State:<div id="stateDiv"></div>
-</div> -->
-<div id="false"></div>
+
+</div> 
 </body>
 </html>
