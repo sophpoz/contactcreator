@@ -15,7 +15,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		console.log(e);
 		$('.bottomhalf').show();
-		$('.tophalf').css("height", "80vh")
+		$('.tophalf').css("height", "80vh" );
 		var newPerson = {
 			firstName: document.getElementById('firstNameInput').value,
 			lastName: document.getElementById('lastNameInput').value,
@@ -28,15 +28,20 @@ $(document).ready(function(){
 
 		contacts.push(newPerson);
 		console.log(contacts);
+
+		var contactHTML = '';
 		//clear out rows loop through array, append each person to the body *for each contact, append*
-		var contactHTML = '<tr>';
-		contactHTML += '<td>' + newPerson.firstName + '</td>';
-		contactHTML += '<td>' + newPerson.lastName + '</td>';
-		contactHTML += '<td>' + newPerson.phone + '</td>';
-		contactHTML += '<td>' + newPerson.streetName + '</td>';
-		contactHTML += '<td>' + newPerson.cityName + '</td>';
-		contactHTML += '<td>' + newPerson.stateName + '</td>';
-		contactHTML += '<td>' + '<button id="delete" type="button">x</button>' + '</td>';
+
+	for(var personIndex in contacts) {
+  		contactHTML += '<tr data-personindex="'+ personIndex +'">';
+  		contactHTML += '<td>' + contacts[personIndex].firstName + '</td>';
+  		contactHTML += '<td>' + contacts[personIndex].lastName + '</td>';
+  		contactHTML += '<td>' + contacts[personIndex].phone + '</td>';
+  		contactHTML += '<td>' + contacts[personIndex].streetName + '</td>';
+  		contactHTML += '<td>' + contacts[personIndex].cityName + '</td>';
+  		contactHTML += '<td>' + contacts[personIndex].stateName + '</td>';
+  		contactHTML += '<td><button id="delete" type="button">x</button></td></tr>';
+		}
 
 		//clear fields
 		$('#firstNameInput').val('');
@@ -47,7 +52,7 @@ $(document).ready(function(){
 		$('#stateInput').val('');
 
 
-		$('#contactRows').append(contactHTML);
+		$('#contactRows').html(contactHTML);
 
 	})
 	
@@ -55,10 +60,17 @@ $(document).ready(function(){
 		if(e.target.tagName === 'TD'){	
 			var thisTd = e.target;
 			$(thisTd).attr('contenteditable', true)
+		}else if(e.target.classList.includes('delete')){
+			var $el = $(e.target).parent().parent('tr');
+		    // console.log($el); // el.dataset.personindex
+		    // Remove from array
+		    contacts.splice( $el.dataset.personindex, 1);
+		    // Remove from HTML
+		    $($el).remove();
 		}
-		$('#delete').on('click',function() {
-			$(this).parent().parent('tr').remove();
-		})
+		// $('.delete').on('click',function() {
+		// 	$(this).parent().parent('tr').remove();
+		// })
 	})
 
 	

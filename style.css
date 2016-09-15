@@ -6,7 +6,7 @@ body{
 	margin: 0;
 	padding:0;
 	font-size: 30px;
-	color:#283D3B;
+	color:#1F2232;
 }
 table {
 	width:100%;
@@ -14,21 +14,22 @@ table {
 .tophalf{
 	width:100vw;
 	height:100vh;
-	background-color: #C44536;
+	background-color: #BC9EC1;
+	/*overflow: hidden;*/
 
 }
 .form{
 	text-align: center;
-	padding:20px;
-	background-color: #EDDDD4;
+	padding:40px;
+	background-color: #FDE8E9;
 	position: absolute;
 	top: 38%;
 	left:50%;
 	transform: translate(-50%, -50%);
-	height: 35vh;
-	width: 50vw;
-	box-shadow: 30px 30px 30px -15px #772E25;
-	padding-top: 40px;
+	height: 30vh;
+	/*height: 250px;*/
+	box-shadow: 30px 30px 30px -15px #816C84;
+	overflow: scroll;
 }
 span{
 	font-family: 'Comfortaa', sans-serif;
@@ -48,17 +49,18 @@ input {
 #submit{
 	height: 40px;
 	width:200px;
-	background-color: #197278;
-	border-bottom: 5px solid #283D3B;
+	background-color: #596475;
+	border-bottom: 5px solid #1F2232;
 	border-radius: 20px;
 	margin-top: 20px;
 	font-family: 'Comfortaa', sans-serif;
-	color: #EDDDD4 ;
+	color: #FDE8E9 ;
 	font-size: 25px;
+	text-decoration: none;
 }
 .bottomhalf{
-	background-color: #EDDDD4;
-	border: 20px solid #197278;
+	background-color: #FDE8E9;
+	border: 20px solid #596475;
 	padding:10px;
 	height:80vh;
 	display: none;
@@ -70,8 +72,8 @@ th, .contact{
 	text-align: center;
 	font-size: 35px;
 	text-decoration: none;
-	background-color: #197278;
-	color:#EDDDD4;
+	background-color: #596475;
+	color:#FDE8E9;
 	margin: -20px;
 	padding: 20px;
 }
@@ -79,10 +81,10 @@ td{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 }
-#delete{
-	background-color: #197278;
+.delete{
+	background-color: #596475;
 	border-bottom: 5px solid #283D3B;
-	color: #EDDDD4 ;
+	color: #FDE8E9 ;
 	font-size: 25px;
 	height:30px;
 	width: 30px;
