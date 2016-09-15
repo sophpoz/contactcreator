@@ -40,7 +40,7 @@ $(document).ready(function(){
   		contactHTML += '<td>' + contacts[personIndex].streetName + '</td>';
   		contactHTML += '<td>' + contacts[personIndex].cityName + '</td>';
   		contactHTML += '<td>' + contacts[personIndex].stateName + '</td>';
-  		contactHTML += '<td><button id="delete" type="button">x</button></td></tr>';
+  		contactHTML += '<td><button class="delete" type="button">x</button></td></tr>';
 		}
 
 		//clear fields
@@ -57,16 +57,18 @@ $(document).ready(function(){
 	})
 	
 	$('table').click(function(e){
-		if(e.target.tagName === 'TD'){	
-			var thisTd = e.target;
-			$(thisTd).attr('contenteditable', true)
-		}else if(e.target.classList.includes('delete')){
+		var $target = $(e.target);
+		if($target.tagName === 'TD'){	
+			$target.attr('contenteditable', true)
+		}else if($target.hasClass('delete')){
 			var $el = $(e.target).parent().parent('tr');
-		    // console.log($el); // el.dataset.personindex
+		    console.log($el); // el.dataset.personindex
 		    // Remove from array
-		    contacts.splice( $el.dataset.personindex, 1);
+		    contacts.splice( parseInt($el.context.dataset.personindex), 1);
 		    // Remove from HTML
-		    $($el).remove();
+		    $el.remove();
+		} else {
+			console.log($target);
 		}
 		// $('.delete').on('click',function() {
 		// 	$(this).parent().parent('tr').remove();
